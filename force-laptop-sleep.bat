@@ -13,7 +13,14 @@ set USER_SAID_NO=".\no-thanks"
 set office_network_prefix=191.168.111
 set home_network_prefix=191.168.222
 
-::REM TODO: adding a simple check to verify this batch is run in an elevated cmd
+::REM a simple check to verify this batch is run with admin permissions
+net session >nul 2>&1
+if %errorLevel% == 0 (
+        echo Administrative permissions confirmed - good
+    ) else (
+        echo Failure: Current permissions inadequate - exiting
+        exit 1
+)
 
 :the_beginning
 del zl.txt l.txt >NUL 2>&1
