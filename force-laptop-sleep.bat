@@ -3,7 +3,7 @@
 ::REM entering batch folder
 CD /d C:\tmp\force-win-sleep\
 
-::rem change thesevariables to fit your scenario
+::REM change thes evariables to fit your scenario
 set THE_LOG=".\00--force_sleep_log.txt"
 
 ::REM local file to hinibit sleep
@@ -13,7 +13,7 @@ set home_network_prefix=191.168.222
 
 ::REM TODO: adding a simple check to verify this batch is run in an elevated cmd
 
-:the_begin
+:the_beginning
 del zl.txt l.txt >NUL 2>&1
 
 ipconfig /all | find "IPv4" | find "%office_network_prefix%" > zl.txt
@@ -46,7 +46,7 @@ echo "current time is <<%ttime%>>"  >>%THE_LOG%
 if %ttime% gtr 1810  goto proceed
 if 0830 gtr %ttime%  goto proceed
 ::REM if we reach this point it is working hours so we need to go back to the beginning and wait 
-goto the_begin
+goto the_beginning
 
 :proceed
 
@@ -76,4 +76,5 @@ if not exist "%USER_SAID_NO%" (
 	 
 )
 
-goto the_begin
+::REM NB: this is an infinite loop - you may terminate it with CTRL-C when needed
+goto the_beginning
