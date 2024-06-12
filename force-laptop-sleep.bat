@@ -29,7 +29,7 @@ for /f "delims=," %%i in ('type l.txt') DO set laptop_in_office=%%i
 
 echo "laptop_in_office is <<%laptop_in_office%>>"  >>%THE_LOG%
 
-if %laptop_in_office% gtr 0 goto :the_begin
+if %laptop_in_office% gtr 0 goto the_beginning
 
 ::REM NOW CHECK IF WE ARE OUTSIDE WORKING HOURS
 ::REM python -c "import datetime ; print(datetime.datetime.now().strftime('%%H%%M'))" > l.txt
