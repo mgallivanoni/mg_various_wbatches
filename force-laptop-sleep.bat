@@ -8,7 +8,7 @@ set THE_LOG=".\00--force_sleep_log.txt"
 set START_WTIME=0830
 set END_WTIME=1810
 
-::REM local file to hinibit sleep
+::REM flag file to prevent sending the laptop to sleep
 set USER_SAID_NO=".\no-thanks"
 set office_network_prefix=191.168.111
 set home_network_prefix=191.168.222
