@@ -9,3 +9,6 @@ various batches to help users live with windows
 
 3. **show-win-path.bat**  
    a tiny batch that is able to print windows PATH variable with one directory per line (all kudos to stacktrace users)
+
+4. **fix-tag-in-mp3-files-with-pattern.py**
+   a python script that provides a simple way to change mp3 tags via cmd line (again: all kudos to stacktrace users)
